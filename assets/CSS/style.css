@@ -1,0 +1,27 @@
+#heading {
+    margin: auto;
+    border: 5px solid black;
+    background: skyblue;
+    text-align: center;
+    font-size: xx-large;
+}
+
+#questionDisplay {
+    padding: 1em;
+    margin: auto;
+    margin-top: 10%;
+    border: 5px solid black;
+    background: lightgray;
+    text-align: center;
+    font-size: x-large;
+}
+
+#questionButton {
+    margin:auto;
+    margin-top: 2em;
+}
+
+#topBar {
+    margin-bottom: 2em;
+    border-bottom: 2px solid black;
+}
