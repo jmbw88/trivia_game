@@ -5,7 +5,7 @@ var questions = [
     ["Which race was not gifted Rings of Power?", "Men", "Hobbits", "Elves", "Dwarves", "B"],
     ["Before revealing himself as Aragorn, by what name was the Ranger known?", "Walker", "Jumper", "Francis", "Strider", "D"],
     ["What weapon does Gimli pledge in the service of the Fellowship?", "Sword", "Bow", "Axe", "Mace", "C"],
-    ["What is the magical metal which composes Frodo's live-saving armor?", "Mithril", "Steel", "Iron", "Gold", "A"],
+    ["What is the magical metal which composes Frodo's life-saving armor?", "Mithril", "Steel", "Iron", "Gold", "A"],
     ["Ill-fated actor Sean Bean plays this member of the Fellowship", "Aragorn", "Boromir", "Frodo", "Gandalf", "B"],
     ["What is the name of the blade given to Frodo by Bilbo?", "Swat", "Scorn", "Sting", "Sunder", "C"],
     ["Who is not a hobbit?", "Gimli", "Frodo", "Merry", "Pippin", "A"],
@@ -17,19 +17,26 @@ function get(x) {
     return document.getElementById(x);
 }
 
-function gameTimer() {
-    timer = timer - 1;
-    if (timer < 20) {
-        timer.innerHTML = timer;
-    }
-    
-    if (timer < 1) {
-        window.clearInterval(update);
-    }
+var timer = 20;
+var intervalId
 
+function gameTimer() {
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000)
 }
 
-update = setInterval("gameTimer()", 1000);
+function decrement() {
+    timer--;
+    timerSpan.innerHTML = timer;
+    if (timer <= 0) {
+        stop();
+        checkAnswer();
+    }
+}
+
+function stop() {
+    clearInterval(intervalId);
+}
 
 function createQuestion () {
     timer = 20
@@ -69,12 +76,15 @@ function checkAnswer() {
     }
         if(choice == questions[pos][5]) {
             correct++;
+            stop();
             correctDisplay.innerHTML = "<h2>Correct!<h2>";
-            correctDisplay.innerHTML += '<img src="assets/Images/Happy_Frodo.jpg">'
+            correctDisplay.innerHTML += '<img src="assets/Images/Happy_Frodo.jpg">';
         }
+
         else {
-            correctDisplay.innerHTML = "<h2>Incorrect!</h2>"
-            correctDisplay.innerHTML += '<img src="assets/Images/Sad_Frodo.png">'
+            stop();
+            correctDisplay.innerHTML = "<h2>Incorrect!</h2>";
+            correctDisplay.innerHTML += '<img src="assets/Images/Sad_Frodo.png">';
         }
         pos++;
         timer = 20
