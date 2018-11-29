@@ -46,4 +46,16 @@ body {
 img {
     border: solid black 10px;
 }
+
+@media only screen and (max-width:960px) {
+    img {
+        max-width:80%;
+        max-height: 80%;
+    }
+
+    #correctDisplay {
+        font-size: x-small;
+
+    }
+}
    
