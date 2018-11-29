@@ -42,7 +42,7 @@ function createQuestion () {
     timer = 20
     test = get("test");
     if(pos >= questions.length) {
-        test.innerHTML = "<h2>You scored "+correct+" of "+questions.length+"!</h2>";
+        test.innerHTML = "<h2>You scored "+correct+" of "+questions.length+"! Refresh the page to play again!</h2>";
         get("test_status").innerHTML = "Test Completed";
         pos = 0;
         correct = 0;

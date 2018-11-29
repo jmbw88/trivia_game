@@ -1,17 +1,27 @@
+
+
+@font-face {
+    font-family: myFirstFont;
+    src: url("RINGM___.TTF");
+}
+
 #heading {
     margin: auto;
-    border: 5px solid black;
-    background: skyblue;
+    border: 5px groove darkgoldenrod;
+    background: black;
     text-align: center;
     font-size: xx-large;
+    color: goldenrod;
+    
 }
 
 #questionDisplay {
     padding: 1em;
     margin: auto;
     margin-top: 10%;
-    border: 5px solid black;
-    background: lightgray;
+    border: 5px solid darkgoldenrod;
+    background-color: darkgreen;
+    color: goldenrod;
     text-align: center;
     font-size: x-large;
 }
@@ -25,3 +35,15 @@
     margin-bottom: 2em;
     border-bottom: 2px solid black;
 }
+
+body {
+    font-family: myFirstFont;
+    background-image: url("../Images/the_Shire.png");
+    background-size: cover;
+
+}
+
+img {
+    border: solid black 10px;
+}
+   
